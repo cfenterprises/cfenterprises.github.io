@@ -19,6 +19,12 @@
 
 	}
 
+	.icon {
+
+		width: 20px;
+
+	}
+
 	#contact-info p{
 
 		display: inline;
@@ -179,6 +185,12 @@
 	#logo{
 		width: 30%;
 		margin: 10px 10px;
+	}
+
+	.icon {
+
+		width: 10px;
+		
 	}
 
 	#fixedbar {
