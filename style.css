@@ -16,6 +16,10 @@ a {
     color: #b0b0b1
 }
 
+body {
+    overflow-x: hidden;
+}
+
 /* Universal reset */
 
 /*Header section*/
@@ -220,6 +224,7 @@ footer * {
 
     .ham-menu-icon {
         display: flex;
+        z-index: 2;
     }
 
     .title-bar-cont {
@@ -233,19 +238,33 @@ footer * {
         align-items: center;
     }
 
-    .header__nav {
-        width: 100%;
-        padding: 2% 0;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: black;
-        margin: 0;
+    body {
+        position: relative;
     }
 
-    .title-bar-cont:hover .header__nav {
+    .header__nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        min-width: 50vw;
+        overflow-y: scroll;
+        backdrop-filter: blur(20px);
+        background-color: rgb(0, 0, 0, 0.8);
         display: flex;
+        padding: 15% 5% 0;
+        margin: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        line-height: 3;
+        z-index: 1;
+        transform: translateX(100%);
+        transition: 0.3s;
+    }
+
+    .show-menu {
+        transform: translateX(0);
     }
 
     main {
@@ -300,11 +319,6 @@ footer * {
         font-size: 1.5rem;
     }
 
-    .header__nav {
-        display: none;
-        z-index: 1;
-    }
-
     main {
         grid-template-columns: 1fr;
         padding: 5% 10% 2.5%;
@@ -338,5 +352,12 @@ footer * {
 
     .footer__nav p {
         display: none;
+    }
+}
+
+@media screen and (max-width:400px) {
+
+    .header__nav {
+        min-width: 65vw;
     }
 }
